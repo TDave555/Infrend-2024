@@ -1,0 +1,10 @@
+<h3>Version changes</h3>
+<div class="col-md-12" *ngIf="changes.length == 0">
+  <p>There are no version changes</p>
+</div>
+<div class="col-md-12" *ngIf="changes.length > 0">
+  <ul *ngFor="let change of changes">
+    <li>{{ change.versionType }} version changed
+      from {{ change.oldValue }} to {{ change.newValue }}</li>
+  </ul>
+</div>

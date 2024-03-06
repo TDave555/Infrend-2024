@@ -1,0 +1,11 @@
+<button class="btn btn-primary me-2" (click)="versionChanged.emit('major')">
+  Increment major
+</button>
+
+<button class="btn btn-info me-2" (click)="versionChanged.emit('minor')">
+  Increment minor
+</button>
+
+<button class="btn btn-secondary me-2" (click)="versionChanged.emit('patch')">
+  Increment patch
+</button>
