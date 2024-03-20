@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h4>HR nyilvántartó</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <button class="btn btn-primary mb-2" (click)="openForm()" *ngIf="!isFormVisible">
+        Új hozzáadása
+      </button>
+
+      <ul *ngFor="let applicant of applicants">
+        <li [class.text-danger]="applicant.experience == '0-5' && applicant.desiredSalary > 400000">
+          <button class="btn btn-sm btn-danger" (click)="deleteApplicant(applicant)">Törlés</button>
+
+          {{ applicant.name }}, {{ applicant.role }} {{ applicant.experience }} év tapasztalat,
+          {{ applicant.desiredSalary }} Ft fizetési igény
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-4" *ngIf="isFormVisible">
+      <div class="mb-3">
+        <label for="name" class="form-label">Név:</label>
+        <input type="text" class="form-control" id="name" [(ngModel)]="newApplicant.name">
+      </div>
+
+      <div class="mb-3">
+        <label for="role" class="form-label">Pozíció:</label>
+        <input type="text" class="form-control" id="role" [(ngModel)]="newApplicant.role">
+      </div>
+
+      <div class="mb-3">
+        <label for="experience" class="form-label">Tapasztalat:</label>
+        <select id="experience" class="form-select" [(ngModel)]="newApplicant.experience">
+          <option value="0-5">0-5 év</option>
+          <option value="5-10">5-10 év</option>
+          <option value="10+">10+ év</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="salary" class="form-label">Fizetési igény (Ft):</label>
+        <input type="number" class="form-control" id="salary" [(ngModel)]="newApplicant.desiredSalary">
+      </div>
+
+      <div class="text-end">
+        <button class="btn btn-primary" (click)="addApplicant()">Hozzáad</button>
+      </div>
+    </div>
+  </div>
+</div>
