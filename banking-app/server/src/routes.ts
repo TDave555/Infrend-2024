@@ -1,15 +1,15 @@
 import express from 'express';
-import { Controller } from './controller/base.controller';
+import { UserController } from './controller/user.controller';
 
 export function getRouter() {
   const router = express.Router();
 
-  const userController = new Controller();
+  const userController = new UserController();
 
   router.get('/user', userController.getAll);
   router.get('/user/:id', userController.getOne);
-  router.post('/user', userController.getAll);
-  router.put('/user', userController.getAll);
+  router.post('/user', userController.create);
+  router.put('/user', userController.update);
   router.delete('/user/:id', userController.delete);
 
   return router;

@@ -1,0 +1,22 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Ügyfélkód</th>
+      <th>Név</th>
+      <th>Lakcím</th>
+      <th>Telefonszám</th>
+      <th>Személyi ig. szám</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (user of users; track $index) {
+      <tr>
+        <td>{{  user.customerId }}</td>
+        <td>{{  user.name }}</td>
+        <td>{{  user.address }}</td>
+        <td>{{  user.phone }}</td>
+        <td>{{  user.idCard }}</td>
+      </tr>
+    }
+  </tbody>
+</table>
