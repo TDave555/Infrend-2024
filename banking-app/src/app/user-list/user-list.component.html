@@ -16,6 +16,14 @@
         <td>{{  user.address }}</td>
         <td>{{  user.phone }}</td>
         <td>{{  user.idCard }}</td>
+        <td>
+          <!-- button class="btn btn-outline-primary"
+          (click)="getTransactionsOfUser(user.id)">Kimenő tranzakciók</button -->
+          <button class="btn btn-outline-primary"
+          (click)="goToUsersForm(user.id)">Kimenő tranzakciók</button>
+          <button class="btn btn-outline-danger"
+          (click)="deleteUser(user)">Törlés</button>
+        </td>
       </tr>
     }
   </tbody>

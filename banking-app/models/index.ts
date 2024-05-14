@@ -6,3 +6,11 @@ export interface UserDTO {
     phone: string;
     idCard: string;
 }
+
+export interface BankTransferDTO {
+  id: number;
+  amount: number;
+  timestamp: string;
+  source: UserDTO | null;
+  destination: UserDTO | null;
+}
